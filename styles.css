@@ -1,0 +1,254 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+  color: whitesmoke;
+}
+
+:root {
+  --cell--size: 100px;
+  --mark--size: calc(var(--cell--size) * 0.9);
+}
+
+body {
+  margin: 0;
+  background-color: rgb(17, 66, 48);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+}
+
+hr {
+  width: 40%;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 18px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.icon1,
+.xScore {
+  color: lawngreen;
+}
+
+.icon2,
+.circleScore {
+  color: sandybrown;
+}
+
+.number {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.board {
+  width: 100vw;
+  height: 50vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+  width: var(--cell--size);
+  height: var(--cell--size);
+  border: 2px solid whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-bottom: none;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--mark--size) * 0.15);
+  height: var(--mark--size);
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  background-color: lawngreen;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: '';
+  position: absolute;
+  border-radius: 50px;
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  width: var(--mark--size);
+  height: var(--mark--size);
+  background-color: sandybrown;
+}
+
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(var(--mark--size) * 0.75);
+  height: calc(var(--mark--size) * 0.75);
+  background-color: rgb(17, 66, 48);
+}
+
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: rgb(252, 86, 26);
+}
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.808);
+  justify-content: center;
+  align-content: center;
+  color: whitesmoke;
+  font-size: 2rem;
+  flex-direction: column;
+}
+
+button {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  height: 40px;
+  padding: 0.25em 0.5em;
+  margin-top: 5px;
+  color: black;
+}
+
+button:hover {
+  scale: 1.1;
+  background-color: lawngreen;
+  color: rgb(252, 86, 26);
+}
+
+button:hover:active {
+  scale: 1;
+  background-color: rgb(252, 86, 26);
+  color: rgb(15, 56, 42);
+}
+
+.innerMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 720px) {
+  .innerMessage {
+    font-size: 20px;
+  }
+  .score {
+    font-size: 16px;
+  }
+  header {
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.winning-message.show {
+  display: grid;
+}
+
+.mode {
+  font-size: 17px;
+  margin-right: 10px;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.dificultad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.changeDificulty {
+  margin-right: 10px;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.levelCP {
+  color: rgb(252, 86, 26);
+}

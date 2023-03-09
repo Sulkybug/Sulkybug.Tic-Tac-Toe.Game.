@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Andres Angulo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="img/tic-tac-toe.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer type="module"></script>
+    <title>Tic-Tac-Toe</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Tic-Tac-Toe</h1>
+    </header>
+    <hr />
+    <div class="score">
+      <button class="mode">Mode</button>
+      <p></p>
+      <p>Score:</p>
+      <div class="scoreBox">
+        <p class="icon icon1">P1</p>
+        <p class="number xScore">0</p>
+      </div>
+      <p>—VS—</p>
+      <div class="scoreBox">
+        <p class="icon icon2">CP</p>
+        <p class="number circleScore">0</p>
+      </div>
+    </div>
+    <div id="board" class="board">
+      <div class="cell" id="1" data-cell></div>
+      <div class="cell" id="2" data-cell></div>
+      <div class="cell" id="3" data-cell></div>
+      <div class="cell" id="4" data-cell></div>
+      <div class="cell" id="5" data-cell></div>
+      <div class="cell" id="6" data-cell></div>
+      <div class="cell" id="7" data-cell></div>
+      <div class="cell" id="8" data-cell></div>
+      <div class="cell" id="9" data-cell></div>
+    </div>
+
+    <div class="description"><p>Player vs Computer</p></div>
+    <div class="dificultad">
+      <button class="changeDificulty">Level</button>
+      <p class="levelCP">Hard</p>
+    </div>
+
+    <div class="winning-message" id="winningMessage">
+      <div class="innerMessage" data-winning-message-text></div>
+      <button id="restartButton">Play Again</button>
+    </div>
+  </body>
+</html>
