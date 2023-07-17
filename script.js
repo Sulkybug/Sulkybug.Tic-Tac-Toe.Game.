@@ -13,10 +13,6 @@ const winningCombinations = [
   [6, 4, 2],
 ];
 
-//const idWinningArray = winningCombinations.map((e) => {
-//  return e.map((x) => x + 1);
-//}); // to increase by 1 all numbers in 2D array
-
 const cell1 = document.getElementById('1');
 const cell2 = document.getElementById('2');
 const cell3 = document.getElementById('3');
@@ -171,7 +167,6 @@ function isDraw() {
 
 function placeMark(cell, currentClass) {
   cell.classList.add(currentClass);
-  //console.log(typeof parseInt(cell.id)); to make the value into a number
   cells = cells.filter((x) => x !== parseInt(cell.id));
 }
 
@@ -208,12 +203,8 @@ function updateScore() {
   }
 }
 
-//async
 export default function cpAnswer() {
   let result = 0;
-  //await new Promise((resolve) => {
-  //setTimeout(resolve, 2000);
-  //});
 
   if (cpLevel === 'Hard' || cpLevel === 'Normal') {
     if (
